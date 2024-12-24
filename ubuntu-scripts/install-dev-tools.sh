@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/Downloads
 
 # Instalar ferramentas de desenvolvimento
 sudo apt-fast -y install git
@@ -11,7 +12,6 @@ sudo apt-fast update
 sudo apt-fast install code
 
 # Installing Eclipse IDE
-cd ~/Downloads
 wget https://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2024-12/R/eclipse-jee-2024-12-R-linux-gtk-x86_64.tar.gz
 cd /opt
 sudo tar -xvzf ~/Downloads/eclipse-jee-*

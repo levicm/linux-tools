@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo apt update
 
 # Instalar apt-fast
@@ -13,9 +12,6 @@ sudo apt-fast upgrade
 
 # Instalar Ubuntu Restricted Extras (https://en.wikipedia.org/wiki/Ubuntu-restricted-extras) 
 sudo apt-fast -y install ubuntu-restricted-extras
-
-# Instalar NeoFetch
-sudo apt-fast -y install neofetch
 
 # Instalar Gerenciador de pacotes Synaptic
 sudo apt-fast -y install synaptic
