@@ -14,3 +14,8 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 echo Installing Bitwarden...
 wget https://github.com/bitwarden/clients/releases/download/desktop-v2024.12.1/Bitwarden-2024.12.1-amd64.deb
 sudo apt install ./Bitwarden-2024.12.1-amd64.deb
+
+echo Installing Remmina...
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
