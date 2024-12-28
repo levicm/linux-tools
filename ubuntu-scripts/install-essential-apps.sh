@@ -19,3 +19,7 @@ echo Installing Remmina...
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
+
+echo Installing FSearch...
+sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-stable
+sudo apt-fast install fsearch
