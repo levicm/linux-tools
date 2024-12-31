@@ -7,7 +7,7 @@ sudo apt update
 sudo apt -y install apt-fast
 
 echo Updating system (now in parallel)
-sudo apt-fast update
+sudo apt update
 sudo apt-fast upgrade
 
 echo Installing Ubuntu Restricted Extras (https://en.wikipedia.org/wiki/Ubuntu-restricted-extras) 
@@ -17,13 +17,22 @@ echo Installing Synaptic...
 sudo apt-fast -y install synaptic
 
 echo Installing curl...
-sudo apt-fast install curl
+sudo apt-fast -y install curl
 
 echo Installing wget...
-sudo apt-fast install wget
+sudo apt-fast -y install wget
 
 echo Installing Gnome-tweaks...
-sudo apt-fast install gnome-tweaks
+sudo apt-fast -y install gnome-tweaks
 
 echo Installing Gnome Shell Extension Manager...
 sudo apt-fast -y install gnome-shell-extension-manager
+
+# On Linux, I consider git and python essential tools
+echo Installing GIT...
+sudo apt-fast -y install git
+
+echo Installing Python3 and pip...
+sudo apt-fast -y install python3
+sudo apt-fast -y install python3-pip
+
