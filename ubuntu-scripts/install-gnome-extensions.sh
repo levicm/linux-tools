@@ -1,5 +1,6 @@
 #!/bin/bash
 echo Installing gnome-extensions-cli, a CLI Gnome extensions tool...
+sudo apt-fast -y install python3-pip
 pip3 install --upgrade gnome-extensions-cli
 # CPU Power Manager
 echo Installing CPU Power Manager...
