@@ -16,3 +16,4 @@ cd epsonscan2-bundle-6.7.70.0.x86_64.deb/
 echo Installing Scan bundle...
 ./install.sh
 echo Software installed!
+echo Please, go to printer settings software \(or access CUPS interface on http://localhost:631/\) and install the printer. 
