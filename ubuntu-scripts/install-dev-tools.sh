@@ -1,13 +1,16 @@
 #!/bin/bash
 cd ~/Downloads
 # Install dev tools
-echo Installing Node.js and Npm...
+echo Installing Node.js v20 and Npm...
 # sudo apt-fast -y install nodejs npm
 # This installation gets just old version 12
 # Using fnm we can get more recent versions, as v20...
 curl -fsSL https://fnm.vercel.app/install | bash
 source /home/levi/.bashrc
 fnm install v20.18.1
+
+echo Installing Angular 17...
+npm install -g @angular/cli@17
 
 echo Installing VSCode...
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
