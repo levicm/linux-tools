@@ -1,6 +1,10 @@
 #!/bin/bash
 sudo apt update
 
+echo Setting date do local time, like Windows does...
+timedatectl set-local-rtc 1 --adjust-system-clock
+timedatectl
+
 echo Installing apt-fast..
 sudo add-apt-repository ppa:apt-fast/stable
 sudo apt update
