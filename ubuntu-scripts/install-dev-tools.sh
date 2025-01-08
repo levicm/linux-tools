@@ -1,16 +1,12 @@
 #!/bin/bash
 cd ~/Downloads
 
-echo Installing Node.js v20 and Npm...
-# sudo apt-fast -y install nodejs npm
-# The apt installation gets just old version 12
-# Using fnm we can get more recent versions, as v20...
-curl -fsSL https://fnm.vercel.app/install | bash
-source /home/levi/.bashrc
-fnm install v20.18.1
+echo Installing GIT...
+sudo apt-fast -y install git
 
-echo Installing Angular 17...
-npm install -g @angular/cli@17
+echo Installing Python3 and pip...
+sudo apt-fast -y install python3
+sudo apt-fast -y install python3-pip
 
 echo Installing VSCode...
 cd ~/Downloads

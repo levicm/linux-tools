@@ -1,11 +1,43 @@
 #!/bin/bash
 cd ~/Downloads
 
+sudo apt update
+
+echo Installing apt-fast..
+sudo add-apt-repository ppa:apt-fast/stable
+sudo apt update
+sudo apt -y install apt-fast
+
+echo Updating system \(now in parallel\)...
+sudo apt update
+sudo apt-fast upgrade
+
+echo Installing Ubuntu Restricted Extras \(https://en.wikipedia.org/wiki/Ubuntu-restricted-extras\)...
+sudo apt-fast -y install ubuntu-restricted-extras
+
+echo Installing Synaptic...
+sudo apt-fast -y install synaptic
+
+echo Installing curl...
+sudo apt-fast -y install curl
+
+echo Installing wget...
+sudo apt-fast -y install wget
+
+echo Installing Gnome-tweaks...
+sudo apt-fast -y install gnome-tweaks
+
+echo Installing Gnome Shell Extension Manager...
+sudo apt-fast -y install gnome-shell-extension-manager
+
 echo Installing NeoFetch...
 sudo apt-fast -y install neofetch
 
 echo Installing HTOP...
 sudo apt-fast -y install htop
+
+echo Installing Locate
+sudo apt-fast install plocate
 
 echo Installing Google Chrome...
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -20,21 +52,19 @@ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt update
 sudo apt-fast install remmina remmina-plugin-rdp remmina-plugin-secret
 
-echo Installing Locate
-sudo apt-fast install plocate
-
-echo Installing FSearch...
-sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-stable
-sudo apt-fast install fsearch
-
-echo Installing ULauncher
-sudo add-apt-repository universe -y 
-sudo add-apt-repository ppa:agornostal/ulauncher -y 
-sudo apt update
-sudo apt-fast install ulauncher
-
 echo Installing OneDriver
 echo 'deb http://download.opensuse.org/repositories/home:/jstaf/Debian_Unstable/ /' | sudo tee /etc/apt/sources.list.d/home:jstaf.list
 curl -fsSL https://download.opensuse.org/repositories/home:jstaf/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_jstaf.gpg > /dev/null
 sudo apt update
 sudo apt-fast install onedriver
+
+echo Installing FSearch...
+sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-stable
+sudo apt update
+sudo apt-fast install fsearch
+
+#echo Installing ULauncher
+#sudo add-apt-repository universe -y 
+#sudo add-apt-repository ppa:agornostal/ulauncher -y 
+#sudo apt update
+#sudo apt-fast install ulauncher
