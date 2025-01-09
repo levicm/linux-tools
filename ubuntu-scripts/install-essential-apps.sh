@@ -26,9 +26,13 @@ then
     sudo apt-fast -y install gnome-shell-extension-manager
 fi
 
+./tool/install-speedtest.sh
+
 ./tool/install-remmina.sh
 
 ./tool/install-fsearch.sh
+
+./tool/install-sublime-text.sh
 
 ./internet/install-google-chrome.sh
 
