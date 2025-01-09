@@ -3,7 +3,7 @@
 # Baixa o pacote
 echo Installing Oracle JDK 17...
 cd ~/Downloads
-wget https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.deb
+wget -c https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.deb
 # Instala o pacote
 sudo apt install ./jdk-17.0.12_linux-x64_bin.deb
 # Define variável de ambiente JAVA_HOME

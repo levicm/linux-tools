@@ -3,7 +3,7 @@
 # Baixa o pacote
 echo Installing Oracle JDK 20...
 cd ~/Downloads
-wget https://download.oracle.com/java/20/archive/jdk-20.0.2_linux-x64_bin.deb 
+wget -c https://download.oracle.com/java/20/archive/jdk-20.0.2_linux-x64_bin.deb 
 # Instala o pacote
 sudo apt install ./jdk-20.0.2_linux-x64_bin.deb
 # Define variável de ambiente JAVA_HOME

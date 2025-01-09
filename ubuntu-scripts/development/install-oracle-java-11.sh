@@ -3,7 +3,7 @@
 # Baixa o pacote
 echo Installing Oracle JDK 11...
 cd ~/Downloads
-wget https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java11/java11025/jdk-11.0.25_linux-x64_bin.deb
+wget -c https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java11/java11025/jdk-11.0.25_linux-x64_bin.deb
 # Instala o pacote
 sudo apt install ./jdk-11.0.25_linux-x64_bin.deb
 # Define variável de ambiente JAVA_HOME

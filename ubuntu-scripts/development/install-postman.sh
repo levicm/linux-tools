@@ -1,7 +1,7 @@
 #!/bin/bash
 echo Installing Postman...
 cd ~/Downloads
-wget wget --output-document=postman.tar.gz https://dl.pstmn.io/download/latest/linux_64
+wget -c --output-document=postman.tar.gz https://dl.pstmn.io/download/latest/linux_64
 tar -xf postman.tar.gz
 sudo mv ./Postman /opt
 cat > postman.desktop <<EOF
