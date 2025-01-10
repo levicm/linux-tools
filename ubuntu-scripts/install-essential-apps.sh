@@ -1,29 +1,35 @@
 #!/bin/bash
 echo Installing Synaptic...
-sudo apt-fast -y install synaptic
+sudo apt -y install synaptic
 
 echo Installing curl...
-sudo apt-fast -y install curl
+sudo apt -y install curl
 
 echo Installing wget...
-sudo apt-fast -y install wget
+sudo apt -y install wget
 
 echo Installing NeoFetch...
-sudo apt-fast -y install neofetch
+sudo apt -y install neofetch
 
 echo Installing HTOP...
-sudo apt-fast -y install htop
+sudo apt -y install htop
 
 echo Installing Locate...
-sudo apt-fast install plocate
+sudo apt install plocate
+
+echo Installing tree...
+sudo apt install tree
+
+echo Installing fd-find...
+sudo apt install fd-find
 
 if [[ -f /usr/bin/gnome-session ]]
 then 
     echo Installing Gnome-tweaks...
-    sudo apt-fast -y install gnome-tweaks
+    sudo apt -y install gnome-tweaks
 
     echo Installing Gnome Shell Extension Manager...
-    sudo apt-fast -y install gnome-shell-extension-manager
+    sudo apt -y install gnome-shell-extension-manager
 fi
 
 ./tool/install-speedtest.sh
@@ -31,6 +37,8 @@ fi
 ./tool/install-remmina.sh
 
 ./tool/install-fsearch.sh
+
+./tool/install-fzf.sh
 
 ./tool/install-sublime-text.sh
 
