@@ -17,6 +17,8 @@ sudo apt-fast upgrade
 echo Installing Ubuntu Restricted Extras \(https://en.wikipedia.org/wiki/Ubuntu-restricted-extras\)...
 sudo apt-fast -y install ubuntu-restricted-extras
 
+./install-commands.sh
+
 ./install-essential-apps.sh
 
 ./install-dev-tools.sh
