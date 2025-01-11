@@ -1,10 +1,10 @@
 #!/bin/bash
 echo Installing GIT...
-sudo apt-fast -y install git
+sudo apt -y install git
 
 echo Installing Python3 and pip...
-sudo apt-fast -y install python3
-sudo apt-fast -y install python3-pip
+sudo apt -y install python3
+sudo apt -y install python3-pip
 
 ./develompent/install-vscode.sh
 
