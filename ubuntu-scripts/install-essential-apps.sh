@@ -11,6 +11,12 @@ fi
 echo Installing Synaptic...
 sudo apt -y install synaptic
 
+if [[ -n `which flatpak` ]]
+then
+    echo Flatpak installed. Installing Gear Lever...
+    flatpak install flathub it.mijorus.gearlever
+fi
+
 ./tool/install-remmina.sh
 
 ./tool/install-fsearch.sh
@@ -22,3 +28,4 @@ sudo apt -y install synaptic
 ./security/install-bitwarden.sh
 
 ./cloud-storage/install-onedriver.sh
+

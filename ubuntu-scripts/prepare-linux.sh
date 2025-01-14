@@ -16,3 +16,7 @@ sudo apt-fast upgrade
 
 echo Installing Ubuntu Restricted Extras \(https://en.wikipedia.org/wiki/Ubuntu-restricted-extras\)...
 sudo apt-fast -y install ubuntu-restricted-extras
+
+echo Installing Flatpak...
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
