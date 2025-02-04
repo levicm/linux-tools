@@ -20,6 +20,6 @@ sudo apt -y install fd-find
 echo Installing NeoFetch...
 sudo apt -y install neofetch
 
-./tool/install-speedtest.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/tool/install-speedtest.sh)
 
-./tool/install-fzf.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/tool/install-fzf.sh)
