@@ -9,3 +9,16 @@ Some Linux scripts made by a Linux noobie to configure his environment as descri
 - install-media-apps.sh: to install media apps as Spotify.
 - install-gnome-extensions.sh: to install some gnome extensions as CPU Power Manager, Sound Input \& Output Device Chooser, Tiling Shell, User Themes and Extensions List.
 
+## Running
+### Run all
+To run all scripts:
+``` bash
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/config-all.sh)
+```
+
+### Run a specific script
+To run a specific script, just choose the script and run it. For example:
+- prepare-linux.sh:
+``` bash
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/prepare-linux.sh)
+```
