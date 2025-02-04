@@ -18,5 +18,18 @@ echo Installing Ubuntu Restricted Extras \(https://en.wikipedia.org/wiki/Ubuntu-
 sudo apt-fast -y install ubuntu-restricted-extras
 
 echo Installing Flatpak...
-sudo apt install flatpak
+sudo apt-fast install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+echo Installing curl...
+sudo apt-fast -y install curl
+
+echo Installing wget...
+sudo apt-fast -y install wget
+
+echo Installing GIT...
+sudo apt-fast -y install git
+
+echo Installing Python3 and pip...
+sudo apt-fast -y install python3
+sudo apt-fast -y install python3-pip
