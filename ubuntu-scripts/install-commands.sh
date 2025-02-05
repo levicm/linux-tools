@@ -1,10 +1,4 @@
 #!/bin/bash
-echo Installing curl...
-sudo apt -y install curl
-
-echo Installing wget...
-sudo apt -y install wget
-
 echo Installing HTOP...
 sudo apt -y install htop
 
