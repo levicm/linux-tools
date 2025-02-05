@@ -22,4 +22,7 @@ then
     ./install-media-apps.sh
 
     ./install-gnome-extensions.sh
+
+    echo Cleaning packages...
+    sudo apt autoremove
 fi
