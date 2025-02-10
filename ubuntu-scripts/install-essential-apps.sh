@@ -17,15 +17,15 @@ then
     flatpak install flathub it.mijorus.gearlever
 fi
 
-./tool/install-remmina.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/tool/install-remmina.sh)
 
-./tool/install-fsearch.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/tool/install-fsearch.sh)
 
-./tool/install-sublime-text.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/tool/install-sublime-text.sh)
 
-./internet/install-google-chrome.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/internet/install-google-chrome.sh)
 
-./security/install-bitwarden.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/security/install-bitwarden.sh)
 
-./cloud-storage/install-onedriver.sh
+bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/cloud-storage/install-onedriver.sh)
 
