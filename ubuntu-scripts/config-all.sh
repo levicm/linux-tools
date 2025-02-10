@@ -11,17 +11,17 @@ echo
 read -r -p "Do you want to run all the scripts to configure your environment? [y/N]" response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
-    ./prepare-linux.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/prepare-linux.sh)
 
-    ./install-commands.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-commands.sh)
 
-    ./install-essential-apps.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-essential-apps.sh)
 
-    ./install-dev-tools.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-dev-tools.sh)
 
-    ./install-media-apps.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-media-apps.sh)
 
-    ./install-gnome-extensions.sh
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-gnome-extensions.sh)
 
     echo Cleaning packages...
     sudo apt autoremove
