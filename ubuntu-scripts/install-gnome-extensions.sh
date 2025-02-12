@@ -4,7 +4,18 @@ then
     echo This is a gnome system!
     echo Installing gnome-extensions-cli, a CLI Gnome extensions tool...
     sudo apt -y install python3-pip
+
+    # On new versions of pip (Ubuntu 23 or higher), this variable is necessary to install gnome-extensions-cli
+    export PIP_BREAK_SYSTEM_PACKAGES=1
     pip3 install --upgrade gnome-extensions-cli
+
+    # Adding path only for this session
+    export PATH=$PATH:~/.local/bin
+    # Adding path permanently
+    echo '
+PATH=$PATH:~/.local/bin
+    ' >> ~/.bashrc
+
     # CPU Power Manager
     echo Installing CPU Power Manager...
     gext install cpupower@mko-sl.de
