@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Hibernate
+Type=Application
+Exec=systemctl hibernate
+Terminal=true
+Icon=/home/levi/.local/share/icons/hibernate-icon.png
+Comment=Hibernate the system
+NoDisplay=false
+Categories=Utility;
+Name[en]=Hibernate
+Name[en_US]=Hibernate
+X-Desktop-File-Install-Version=0.26
+
