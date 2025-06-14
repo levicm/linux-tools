@@ -6,6 +6,9 @@ then
 
     echo Installing Gnome Shell Extension Manager...
     sudo apt -y install gnome-shell-extension-manager
+
+    echo Installing Alacarte Gnome Menu Editor...
+    sudo apt -y install alacarte
 fi
 
 echo Installing Synaptic...
