@@ -33,3 +33,6 @@ sudo apt-fast -y install git
 echo Installing Python3 and pip...
 sudo apt-fast -y install python3
 sudo apt-fast -y install python3-pip
+
+echo Installing PDF printer...
+sudo apt-fast install printer-driver-cups-pdf
