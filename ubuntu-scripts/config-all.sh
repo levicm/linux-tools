@@ -23,6 +23,8 @@ then
 
     bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-gnome-extensions.sh)
 
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-office-apps.sh)
+
     bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-ttf-fonts.sh)
 
     echo Cleaning packages...
