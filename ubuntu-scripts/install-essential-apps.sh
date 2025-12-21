@@ -29,6 +29,3 @@ bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/head
 bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/internet/install-google-chrome.sh)
 
 bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/security/install-bitwarden.sh)
-
-bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/cloud-storage/install-onedriver.sh)
-
