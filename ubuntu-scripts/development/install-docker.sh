@@ -28,3 +28,4 @@ sudo update-ca-certificates
 # os certificados copiados para /etc/docker/certs.d/ serão utilizados diretamente pelo Docker
 sudo mkdir -p /etc/docker/certs.d/registry-1.docker.io/
 sudo cp docker.com.crt /etc/docker/certs.d/registry-1.docker.io/
+rm docker.com.crt
