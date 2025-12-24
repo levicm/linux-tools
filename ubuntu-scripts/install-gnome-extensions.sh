@@ -46,3 +46,6 @@ gext install auto-power-profile@dmy3k.github.io
 # Hibernate Status Button
 echo Installing Hibernate Status Button...
 gext install hibernate-status@dromi
+# Caffeine
+echo Installing Caffeine...
+gext install caffeine@patapon.info
