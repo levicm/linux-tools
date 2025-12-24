@@ -53,7 +53,25 @@ else
     echo "Sucesso! O sistema agora está configurado para retomar de: $SWAP_DEVICE"
 fi
 
-# 5. No Gnome, instalar extensão para botão de hibernação
+# 5. Garantir que o polkitd-pkla esteja instalado para suporte a hibernação
+sudo apt install polkitd-pkla
+if [[ ! -f /etc/polkit-1/rules.d/10-enable-hibernate.rules ]]
+then
+    echo "Criando regra polkit para permitir hibernação sem senha..."
+    sudo touch /etc/polkit-1/rules.d/10-enable-hibernate.rules
+    echo 'polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.login1.hibernate" ||
+        action.id == "org.freedesktop.login1.hibernate-multiple-sessions" ||
+        action.id == "org.freedesktop.upower.hibernate" ||
+        action.id == "org.freedesktop.login1.handle-hibernate-key" ||
+        action.id == "org.freedesktop.login1.hibernate-ignore-inhibit")
+    {
+        return polkit.Result.YES;
+    }
+});' | sudo tee /etc/polkit-1/rules.d/10-enable-hibernate.rules > /dev/null
+fi
+
+# 6. No Gnome, instalar extensão para botão de hibernação
 if [[ -f /usr/bin/gnome-session ]]
 then 
     echo This is a gnome system! Installing Gnome extension to show Hibernate button...
