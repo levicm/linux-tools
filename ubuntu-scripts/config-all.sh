@@ -27,6 +27,8 @@ then
 
     bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-ttf-fonts.sh)
 
+    bash <(wget -qO - https://raw.githubusercontent.com/levicm/linux-tools/refs/heads/main/ubuntu-scripts/install-nautilus-extensions.sh)
+
     echo Cleaning packages...
     sudo apt autoremove
 fi
