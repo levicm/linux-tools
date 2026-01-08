@@ -25,6 +25,8 @@ for IFACE_PATH in /sys/class/net/*; do
         ethtool --set-eee "$IFACE" eee off &>/dev/null || true
         sleep 1
 
+        ethtool -A "$IFACE" rx off tx off &>/dev/null || true
+
         ip link set "$IFACE" down
         sleep 2
         ip link set "$IFACE" up
