@@ -86,4 +86,34 @@ then
     gext install hibernate-status@dromi
 fi
 
+# 7. Criar script de drop cache para tornar a hibernação mais rápida (opcional)
+read -p "Deseja criar um script para limpar o cache antes de hibernar? (Recomendado para hibernação mais rápida) (s/n): " create_cache_script
+if [[ "$create_cache_script" == "s" ]]
+then
+    echo "Criando script de limpeza de cache..."
+    sudo tee /usr/lib/systemd/system-sleep/pre-hibernate.sh > /dev/null <<EOF
+#!/bin/bash
+if [ "$1" = "pre" ] && [ "$2" = "hibernate" ]; then
+    sync
+    echo 3 > /proc/sys/vm/drop_caches
+fi
+EOF
+    sudo chmod +x /usr/lib/systemd/system-sleep/pre-hibernate.sh
+    echo "Script criado em /usr/lib/systemd/system-sleep/pre-hibernate.sh"
+    echo "Ele será executado antes da hibernação."
+fi
+
+# 8. Reduzir o swappiness para melhorar a performance de hibernação (opcional)
+read -p "Deseja reduzir o swappiness para melhorar a performance de hibernação? (s/n): " reduce_swappiness
+if [[ "$reduce_swappiness" == "s" ]]
+then
+    echo "Reduzindo swappiness para 10..."
+    sudo sysctl vm.swappiness=10
+    # Tornar a mudança permanente
+    if ! grep -q "vm.swappiness=10" /etc/sysctl.d/99-swappiness.conf; then
+        echo "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
+    fi
+    echo "Swappiness reduzido para 10. Isso pode melhorar a performance de hibernação, mas pode afetar a performance geral do sistema em situações de pouca RAM."
+fi  
+
 echo "--- Process completed! A system reboot is recommended. ---"
