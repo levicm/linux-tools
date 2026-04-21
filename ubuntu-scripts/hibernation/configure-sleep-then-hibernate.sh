@@ -14,7 +14,7 @@ set -euo pipefail
 HIBERNATE_DELAY=1800    # segundos antes de hibernar após suspend (30 minutos)
 
 # Para GNOME: tempo de inatividade antes de suspender (em segundos)
-GNOME_IDLE_AC=2400      # 40 minutos na tomada
+GNOME_IDLE_AC=1800      # 30 minutos na tomada
 GNOME_IDLE_BATTERY=900  # 15 minutos na bateria
 
 # -----------------------------------------------------------------------------
@@ -144,7 +144,6 @@ HandleLidSwitch=suspend-then-hibernate
 HandleLidSwitchExternalPower=suspend-then-hibernate
 HandleLidSwitchDocked=ignore
 HandleSuspendKey=suspend-then-hibernate
-HandlePowerKey=suspend-then-hibernate
 EOF
 
     ok "Criado: ${CONF_FILE}"
