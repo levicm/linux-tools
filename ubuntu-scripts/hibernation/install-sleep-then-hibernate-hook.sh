@@ -10,7 +10,9 @@ set -euo pipefail
 # -----------------------------------------------------------------------------
 # PARÂMETROS
 # -----------------------------------------------------------------------------
-HIBERNATE_DELAY=1800      # segundos em suspend antes de hibernar
+# Pode ser sobrescrito via variável de ambiente ao chamar este script,
+# por exemplo: HIBERNATE_DELAY=900 bash install-sleep-then-hibernate-hook.sh
+HIBERNATE_DELAY="${HIBERNATE_DELAY:-1800}"   # segundos em suspend antes de hibernar
 
 # -----------------------------------------------------------------------------
 # CORES

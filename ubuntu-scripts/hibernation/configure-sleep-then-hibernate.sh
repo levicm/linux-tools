@@ -206,7 +206,28 @@ configure_gnome() {
     run_gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend' 2>/dev/null || true
 
     ok "GNOME configurado: idle ${GNOME_IDLE_BATTERY}s bateria / ${GNOME_IDLE_AC}s tomada."
-    info "O suspend-then-hibernate é gerenciado pelo systemd-logind, não pelo GNOME."
+
+    # No GNOME, o gsd-power intercepta as ações de suspensão antes do logind,
+    # impedindo o suspend-then-hibernate nativo. O hook contorna isso via RTC.
+    install_gnome_hook
+}
+
+install_gnome_hook() {
+    section "Instalando sleep hook para GNOME"
+
+    # Procura o script do hook no mesmo diretório deste script
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    HOOK_INSTALLER="${SCRIPT_DIR}/install-sleep-then-hibernate-hook.sh"
+
+    if [[ ! -f "$HOOK_INSTALLER" ]]; then
+        warn "install-sleep-then-hibernate-hook.sh não encontrado em ${SCRIPT_DIR}."
+        warn "O suspend-then-hibernate pode não funcionar corretamente no GNOME."
+        warn "Execute install-sleep-then-hibernate-hook.sh manualmente para ativar."
+        return
+    fi
+
+    # Passa o mesmo HIBERNATE_DELAY configurado neste script
+    HIBERNATE_DELAY="$HIBERNATE_DELAY" bash "$HOOK_INSTALLER"
 }
 
 # -----------------------------------------------------------------------------
