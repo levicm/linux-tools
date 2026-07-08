@@ -12,27 +12,27 @@ sudo apt -y install apt-fast
 
 echo Updating system \(now in parallel\)...
 sudo apt update
-sudo apt-fast upgrade
+sudo apt upgrade
 
 echo Installing Ubuntu Restricted Extras \(https://en.wikipedia.org/wiki/Ubuntu-restricted-extras\)...
-sudo apt-fast -y install ubuntu-restricted-extras
+sudo apt -y install ubuntu-restricted-extras
 
 echo Installing Flatpak...
-sudo apt-fast install flatpak
+sudo apt -y install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo Installing curl...
-sudo apt-fast -y install curl
+sudo apt -y install curl
 
 echo Installing wget...
-sudo apt-fast -y install wget
+sudo apt -y install wget
 
 echo Installing GIT...
-sudo apt-fast -y install git
+sudo apt -y install git
 
 echo Installing Python3 and pip...
-sudo apt-fast -y install python3
-sudo apt-fast -y install python3-pip
+sudo apt -y install python3
+sudo apt -y install python3-pip
 
 echo Installing PDF printer...
-sudo apt-fast install printer-driver-cups-pdf
+sudo apt -y install printer-driver-cups-pdf
