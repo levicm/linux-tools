@@ -10,7 +10,7 @@ sudo add-apt-repository ppa:apt-fast/stable
 sudo apt update
 sudo apt -y install apt-fast
 
-echo Updating system \(now in parallel\)...
+echo Updating system...
 sudo apt update
 sudo apt upgrade
 
