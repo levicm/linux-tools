@@ -86,11 +86,11 @@ then
     gext install hibernate-status@dromi
 fi
 
-# 7. Criar script de drop cache para tornar a hibernação mais rápida (opcional)
-read -p "Deseja criar um script para limpar o cache antes de hibernar? (Recomendado para hibernação mais rápida) (s/n): " create_cache_script
-if [[ "$create_cache_script" == "s" ]]
+# 7. Create a cache-drop script to make hibernation faster (optional)
+read -p "Do you want to create a script to clear the cache before hibernating? (Recommended for faster hibernation) (y/n): " create_cache_script
+if [[ "$create_cache_script" == "y" ]]
 then
-    echo "Criando script de limpeza de cache..."
+    echo "Creating cache cleanup script..."
     sudo tee /usr/lib/systemd/system-sleep/pre-hibernate.sh > /dev/null <<EOF
 #!/bin/bash
 if [ "$1" = "pre" ] && [ "$2" = "hibernate" ]; then
@@ -99,21 +99,25 @@ if [ "$1" = "pre" ] && [ "$2" = "hibernate" ]; then
 fi
 EOF
     sudo chmod +x /usr/lib/systemd/system-sleep/pre-hibernate.sh
-    echo "Script criado em /usr/lib/systemd/system-sleep/pre-hibernate.sh"
-    echo "Ele será executado antes da hibernação."
+    echo "Script created at /usr/lib/systemd/system-sleep/pre-hibernate.sh"
+    echo "It will run before hibernation."
 fi
 
-# 8. Reduzir o swappiness para melhorar a performance de hibernação (opcional)
-read -p "Deseja reduzir o swappiness para melhorar a performance de hibernação? (s/n): " reduce_swappiness
-if [[ "$reduce_swappiness" == "s" ]]
+# 8. Reduce swappiness to improve hibernation performance (optional)
+read -p "Do you want to reduce swappiness to improve hibernation performance? (y/n): " reduce_swappiness
+if [[ "$reduce_swappiness" == "y" ]]
 then
-    echo "Reduzindo swappiness para 10..."
+    echo "Reducing swappiness to 10..."
     sudo sysctl vm.swappiness=10
-    # Tornar a mudança permanente
+    # Make the change permanent
     if ! grep -q "vm.swappiness=10" /etc/sysctl.d/99-swappiness.conf; then
         echo "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
     fi
-    echo "Swappiness reduzido para 10. Isso pode melhorar a performance de hibernação, mas pode afetar a performance geral do sistema em situações de pouca RAM."
-fi  
+    echo "Swappiness reduced to 10. This can improve hibernation performance, but may affect overall system performance in low-RAM situations."
+fi
 
 echo "--- Process completed! A system reboot is recommended. ---"
+echo ""
+echo "WARNING: Bitwarden version 2026.6.1 is blocking system hibernation."
+echo "If hibernation does not work, close Bitwarden (or check for a newer"
+echo "version that fixes the issue) before trying to hibernate again."
